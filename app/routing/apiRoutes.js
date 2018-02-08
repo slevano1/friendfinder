@@ -16,7 +16,7 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
   app.get("/api/friends", function(req, res) {
     res.json(friends);
-  });
+  })
 
   app.post("/api/friends", function(req, res) {
 
@@ -29,7 +29,7 @@ module.exports = function(app) {
     console.log(req.body);
     //result of user's survey POST and parse 
     var userData = req.body;
-    var userScores = userData.scores;  
+    var userScores = userData.scores  
 
     console.log(userScores);
 
@@ -45,7 +45,7 @@ module.exports = function(app) {
     for (var j = 0; friends[i].scores[j]; j++) {
     //diff between each friend array
     //run math absolute -> if negative turn positive, if positive stay the same --returns the absolute value of a number
-      totalDifference = Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
+      totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
     //
       if (totalDifference <= bestMatch.friendDifference) {
         //reset the bestMatch to be the new friend

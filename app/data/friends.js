@@ -6,8 +6,8 @@
 // ===============================================================================
 var friends = [
 {
-  name:"Ahmed",
-  photo:"https://goo.gl/images/aJRgZW",
+  name:"GZ",
+  photo:"https://s17.postimg.org/e1m8g3d67/GZ1.jpg",
   scores:[
       5,
       1,
@@ -22,8 +22,8 @@ var friends = [
     ]
   },
   {
-  name:"Spongebob",
-  photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  name:"Squidward",
+  photo:"https://s17.postimg.org/3str9z71b/squidw.jpg",
   scores:[
       3,
       2,
@@ -39,7 +39,7 @@ var friends = [
   },
   {
   name:"Mr. Burns",
-  photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  photo:"https://s17.postimg.org/jeb2tzvv3/mrb.jpg",
   scores:[
       1,
       2,
@@ -54,8 +54,8 @@ var friends = [
     ]
   },
    {
-  name:"Caeser",
-  photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  name:"Bub",
+  photo:"https://s17.postimg.org/4v3xsri7j/bub.jpg",
   scores:[
       5,
       2,

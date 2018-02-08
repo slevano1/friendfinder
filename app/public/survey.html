@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <title>Friend Fiinder</title>
   <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
@@ -133,7 +133,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/slevano1">Github Repo</a></p> 
+        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/slevano1/friendfinder">Github Repo</a></p> 
       </div>
     </footer>
   </div>
@@ -149,8 +149,8 @@
           <h2 class="modal-title"><strong>Best Match</strong></h2>
         </div>
         <div class="modal-body">
-          <h2 id="bestMatch.name"></h2>
-          <img id="bestMatch.photo" src="https://goo.gl/images/aJRgZW" alt="">
+          <h2 id="matchName"></h2>
+          <img id="matchImg" src="#" alt="">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -162,59 +162,48 @@
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS LOADED FROM OUR SERVER -->
 <script type="text/javascript">
-    
-
-  $("#submit").on("click", function() {
-    //Form Validation
-    function validateForm() {
+  $("#submit").on("click", function(){
+    function validateForm(){
       var isValid = true;
-      $(".form-control").each(function() {
-        if($(this).val() === "") {
+      $(".form-control").each(function(){
+        if($(this).val() === ""){
+          isValid = false;
+        }
+      });
+      $(".chosen-select").each(function(){
+        if($(this).val() === ""){
           isValid = false;
         }
       });
       return isValid;
     }
-
-    //if all required fields are filled in
-    if (validateForm()) {
-      //creating an object for user's data
+    if(validateForm()){
       var userData = {
         name: $("#name").val(),
         photo: $("#photo").val(),
         scores: [
-          $("q1").val(),
-          $("q2").val(),
-          $("q3").val(),
-          $("q4").val(),
-          $("q5").val(),
-          $("q6").val(),
-          $("q7").val(),
-          $("q8").val(),
-          $("q9").val(),
-          $("q10").val()
+          $("#q1").val(),
+          $("#q2").val(),
+          $("#q3").val(),
+          $("#q4").val(),
+          $("#q5").val(),
+          $("#q6").val(),
+          $("#q7").val(),
+          $("#q8").val(),
+          $("#q9").val(),
+          $("#q10").val()
         ]
-      };
-
-    //grab website url
-    var currentURL = window.location.origin;
-    //AJAX - post data to the friends API
-    $.post(currentURL + "/api/friends", userData, function(data) {
-
-// Grab the result from the AJAX post so that the best match's name and photo are displayed.
-        // $("#bestMatch.name").text(data.name);
-        // $('#bestMatch.photo').attr("src", data.photo);
-        // // Show the modal with the best match 
-        $("#resultsModal").modal('toggle');
-        alert("working");
-      });
-  } 
-  else {
-    alert("blahblah");
-  }
-  return false;
-  });
-  
+      }
+      var currentURL = window.location.origin;
+      $.post(currentURL + "/api/friends", userData, function(data){
+        $("#resultsModal").modal("toggle");
+      })
+    } else{
+      alert("Please complete all fields before submitting")
+    }
+    return false;
+  })
 </script>
 </body>
+
 </html>
