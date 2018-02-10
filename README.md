@@ -1,11 +1,11 @@
 # friendfinder
-=================
-##Overview
+
+## Overview
 In this activity, you'll build a compatibility-based "FriendFinder" application -- basically a dating app. This full-stack site will take in results from your users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
 
 You will use Express to handle routing. Make sure you deploy your app to Heroku so other users can fill it out.
 
-##Before You Begin
+## Before You Begin
 Check out this demo version of the site (https://friend-finder-fsf.herokuapp.com/). Use this as a model for how we expect your assignment look and operate.
 
 Create a folder called FriendFinder. Inside the folder, organize your directories so it matches the following:
@@ -24,7 +24,7 @@ FriendFinder
   - package.json
   - server.js
 ```
-##Instructions
+## Instructions
 
 1. Your survey should have 10 questions of your choosing. Each answer should be on a scale of 1 to 5 based on how much the user agrees or disagrees with a question.
 
@@ -70,8 +70,8 @@ You should save your application's data inside of app/data/friends.js as an arra
 1. Once you've found the current user's most compatible friend, display the result as a modal pop-up.
 The modal should display both the name and picture of the closest match.
 
-##Minimum Requirements
+## Minimum Requirements
 Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed.
 
-##Hosting on Heroku
+## Hosting on Heroku
 Now that we have a backend to our applications, we use Heroku for hosting. Please note that while Heroku is free, it will request credit card information if you have more than 5 applications at a time or are adding a database.
