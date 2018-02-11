@@ -54,7 +54,7 @@ var friends = [
     ]
   },
    {
-  "name":"Bub",
+  "name":"Lil' Bub",
   "photo":"https://s17.postimg.org/4v3xsri7j/bub.jpg",
   "scores":[
       '5',
@@ -68,7 +68,24 @@ var friends = [
       '3',
       '1'
     ]
-  }
+  },
+  {
+  "name":"Ultraman",
+  "photo":"https://s17.postimg.org/bvfj2k4z3/ultraman.png",
+  "scores":[
+      '2',
+      '2',
+      '5',
+      '5',
+      '2',
+      '2',
+      '4',
+      '5',
+      '4',
+      '1'
+    ]
+  },
+
 ];
 // // Note how we export the array. This makes it accessible to other files using require.
  module.exports = friends;
